@@ -1,0 +1,17 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_SUPPORT_GPU=0 -DSK_GPU_V1=0
+framework_dirs =
+include_dirs = -I../.. -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -g -Wall -Wextra -Winit-self -Wpointer-arith -Wsign-compare -Wvla -Wno-deprecated-declarations -Wno-maybe-uninitialized -Wno-psabi -Wno-unused-parameter
+cflags_c =
+root_out_dir = .
+target_output_name = skia_c_api_example
+
+build obj/experimental/c-api-example/skia_c_api_example.skia-c-example.o: cc ../../experimental/c-api-example/skia-c-example.c
+
+build ./skia_c_api_example: link obj/experimental/c-api-example/skia_c_api_example.skia-c-example.o ./libskia.a
+  ldflags = -rdynamic -Wl,-rpath,\$$ORIGIN -Wl,--gc-sections
+  libs = -lpthread -lfontconfig -ldl
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = 
