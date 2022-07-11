@@ -1,0 +1,11 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_SUPPORT_GPU=0 -DSK_GPU_V1=0 -DSK_GAMMA_APPLY_TO_A8 -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DGR_TEST_UTILS=1 -DSKIA_IMPLEMENTATION=1
+framework_dirs =
+include_dirs = -I../..
+cflags = -march=haswell -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -g -Wall -Wextra -Winit-self -Wpointer-arith -Wsign-compare -Wvla -Wno-deprecated-declarations -Wno-maybe-uninitialized -Wno-psabi -Wno-unused-parameter
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -Wnon-virtual-dtor -Wno-noexcept-type -Wno-redundant-move
+root_out_dir = .
+target_output_name = hsw
+
+build obj/src/opts/hsw.SkOpts_hsw.o: cxx ../../src/opts/SkOpts_hsw.cpp
+
+build obj/hsw.stamp: stamp obj/src/opts/hsw.SkOpts_hsw.o

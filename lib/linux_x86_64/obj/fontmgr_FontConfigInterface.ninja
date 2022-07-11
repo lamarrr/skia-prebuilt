@@ -1,0 +1,14 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_SUPPORT_GPU=0 -DSK_GPU_V1=0 -DSK_GAMMA_APPLY_TO_A8 -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DGR_TEST_UTILS=1 -DSKIA_IMPLEMENTATION=1
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -g -Wall -Wextra -Winit-self -Wpointer-arith -Wsign-compare -Wvla -Wno-deprecated-declarations -Wno-maybe-uninitialized -Wno-psabi -Wno-unused-parameter
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -Wnon-virtual-dtor -Wno-noexcept-type -Wno-redundant-move
+root_out_dir = .
+target_output_name = fontmgr_FontConfigInterface
+
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface.o: cxx ../../src/ports/SkFontConfigInterface.cpp
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct.o: cxx ../../src/ports/SkFontConfigInterface_direct.cpp
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct_factory.o: cxx ../../src/ports/SkFontConfigInterface_direct_factory.cpp
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontMgr_FontConfigInterface.o: cxx ../../src/ports/SkFontMgr_FontConfigInterface.cpp
+
+build obj/fontmgr_FontConfigInterface.stamp: stamp obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface.o obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct.o obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct_factory.o obj/src/ports/fontmgr_FontConfigInterface.SkFontMgr_FontConfigInterface.o || obj/typeface_freetype.stamp obj/third_party/fontconfig.stamp ./libfreetype2.a ./libpng.a ./libzlib.a obj/third_party/zlib/zlib_adler32_simd.stamp obj/third_party/zlib/zlib_crc32_simd.stamp obj/third_party/zlib/zlib_inflate_chunk_simd.stamp obj/third_party/zlib/zlib_x86_x64_simd.stamp
