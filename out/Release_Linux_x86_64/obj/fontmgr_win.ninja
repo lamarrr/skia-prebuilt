@@ -1,8 +1,0 @@
-defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_SUPPORT_GPU=0 -DSK_GPU_V1=0 -DSK_GAMMA_APPLY_TO_A8 -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DGR_TEST_UTILS=1 -DSKIA_IMPLEMENTATION=1
-framework_dirs =
-include_dirs = -I../..
-root_out_dir = .
-target_output_name = fontmgr_win
-
-
-build obj/fontmgr_win.stamp: stamp
