@@ -1,7 +1,7 @@
 defines = -DNDEBUG
 framework_dirs =
 include_dirs =
-cflags = -w -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -g -I /home/lamar/Documents/workspace/oss/skia-prebuilt/skia/third_party/externals/zlib/google -I /home/lamar/Documents/workspace/oss/skia-prebuilt/skia/third_party/externals/zlib
+cflags = -w -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -g -I /home/lamar/Documents/workspace/oss/skia-prebuilt/build/skia/third_party/externals/zlib/google -I /home/lamar/Documents/workspace/oss/skia-prebuilt/build/skia/third_party/externals/zlib
 cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
 root_out_dir = .
 target_output_name = libcompression_utils_portable

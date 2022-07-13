@@ -4,10 +4,10 @@ rule solink
   rspfile = ${out}.rsp
   rspfile_content = ${in}
 rule copy_bundle_data
-  command = python3 "/home/lamar/Documents/workspace/oss/skia-prebuilt/skia/gn/cp.py" ${in} ${out}
+  command = python3 "/home/lamar/Documents/workspace/oss/skia-prebuilt/build/skia/gn/cp.py" ${in} ${out}
   description = copy_bundle_data ${in} ${out}
 rule alink
-  command =  python3 "/home/lamar/Documents/workspace/oss/skia-prebuilt/skia/gn/rm.py" "${out}" && ar rcs ${out} @${out}.rsp
+  command =  python3 "/home/lamar/Documents/workspace/oss/skia-prebuilt/build/skia/gn/rm.py" "${out}" && ar rcs ${out} @${out}.rsp
   description = link ${out}
   rspfile = ${out}.rsp
   rspfile_content = ${in}
@@ -48,7 +48,7 @@ rule objcxx
   depfile = ${out}.d
   deps = gcc
 rule copy
-  command = python3 "/home/lamar/Documents/workspace/oss/skia-prebuilt/skia/gn/cp.py" ${in} ${out}
+  command = python3 "/home/lamar/Documents/workspace/oss/skia-prebuilt/build/skia/gn/cp.py" ${in} ${out}
   description = copy ${in} ${out}
 
 subninja obj/android_utils.ninja
