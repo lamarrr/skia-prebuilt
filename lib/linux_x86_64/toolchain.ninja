@@ -77,7 +77,7 @@ subninja obj/fontmgr_custom_embedded_factory.ninja
 subninja obj/fontmgr_custom_empty.ninja
 subninja obj/fontmgr_custom_empty_factory.ninja
 subninja obj/fontmgr_empty_factory.ninja
-build obj/fontmgr_factory.stamp: stamp obj/fontmgr_empty_factory.stamp
+build obj/fontmgr_factory.stamp: stamp obj/fontmgr_fontconfig_factory.stamp
 subninja obj/fontmgr_fontconfig.ninja
 subninja obj/fontmgr_fontconfig_factory.ninja
 subninja obj/fontmgr_fuchsia.ninja
